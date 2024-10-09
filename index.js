@@ -4,15 +4,11 @@ let bankBranchInstance;
 class BankBranch {
 
 constructor(branchInfo) {
+
+  if (bankBranchInstance == null) {
     this.branchInfo = branchInfo;
-}
-
-    static getInstance(branchInfo) {
-
-    if (bankBranchInstance === null) {
-        bankBranchInstance = new BankBranch(branchInfo);
-      }
-
+    bankBranchInstance = this;
+  }
       return bankBranchInstance;
     }
 
@@ -23,9 +19,13 @@ getBranchInfo() {
 
 
 const branchA = new BankBranch("Location: Claremont");
+
 Object.freeze(branchA);
+
 console.log("Branch Information: " + branchA.getBranchInfo());
+
 const branchB = new BankBranch("Location: V&A Waterfront");
+
 Object.freeze(branchB);
 
 console.log("Branch Information: " + branchB.getBranchInfo());
