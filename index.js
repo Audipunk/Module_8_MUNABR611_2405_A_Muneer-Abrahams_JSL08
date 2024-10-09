@@ -22,11 +22,22 @@ getBranchInfo() {
   }
 
 
-const branchA = new BankBranch("Location: Joburg");
+const branchA = new BankBranch("Location: Claremont");
 Object.freeze(branchA);
 console.log("Branch Information: " + branchA.getBranchInfo());
-const branchB = new BankBranch("Location: Cape Town");
+const branchB = new BankBranch("Location: V&A Waterfront");
 Object.freeze(branchB);
+
+console.log("Branch Information: " + branchB.getBranchInfo());
+
+if (branchA === branchB) {
+  console.log("Error: instance already in use");
+}
+
+console.log(branchA.getBranchInfo()); 
+console.log(branchB.getBranchInfo());
+
+console.log(branchA === branchB);
 // This pseudo-code provides a step-by-step explanation of how to implement the Singleton Pattern for managing a single instance of the `BankBranch` class throughout the application, ensuring that multiple instances refer to the same object.
 
 // NOTES:
