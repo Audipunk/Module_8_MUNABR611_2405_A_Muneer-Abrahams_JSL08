@@ -1,5 +1,5 @@
-// This one will be a little tricky. So check out this overview first: https://www.youtube.com/watch?v=sJ-c3BA-Ypo
-let bankBranchInstance;
+
+let bankBranchInstance = null;
 
 class BankBranch {
 
